@@ -1,0 +1,1822 @@
+<!--Nom : Nicola Baker
+Année : 2020
+Projet : Final
+-->
+
+<!DOTYPE HTML>
+<html>
+ <head>
+    <title>Jeu de Math</title>
+    <meta charset="utf-8">
+    
+    <style> 
+        .pointecran{
+            color: #000000;
+            font-size: 1.6em;  
+            text-align: center;
+            background-image:  url("garage.png");
+            position: absolute;
+            left: 80%;
+            top: 12.4%;
+            width: 100px;
+            height: 29px;
+            display: none;
+            padding-top: 11px;
+        } 
+        .pointecran2{
+            color: #000000;
+            font-size: 1.6em;  
+            text-align: center;
+            background-image:  url("garage%20auto.png");
+            position: absolute;
+            left: 80%;
+            top: 12.4%;
+            width: 100px;
+            height: 29px;
+            display: none;
+            padding-top: 11px;
+        }     
+        .fin{ 
+            font-size: 5.0em;
+            width: 500px;
+            height: 120px;
+            font-family: sans-serif;
+            display: none;
+            border:solid 1px #000000;
+            border-radius:60px; 
+            color: black;
+            background-color: red;
+            position: absolute;
+            left: 445px;
+            top: 348px;
+            text-align: center;
+        }
+        .ggbutton{ 
+            font-size: 3.2em;
+            width: 500px;
+            height: 120px;
+            font-family: sans-serif;
+            display: none;
+            border:solid 1px #000000; 
+            border-radius:60px; 
+            color: black;
+            background-color: red;
+            position: absolute;
+            left: 438px;
+            top: 350px;
+            text-align: center;
+        }
+        .finimg{
+            position: absolute;
+            left: 450px;
+            top: 41px;
+            width: 500px;
+            display: none;
+        }
+        .fingaz{
+            position: absolute;
+            left: 540px;
+            top: 52px;
+            width: 295px;
+            height: 293px;
+            display: none;
+            border-radius:70px; 
+            background-color: white;
+        }     
+        .ggimg{
+            position: absolute;
+            left: 480px;
+            top: 18px;
+            width: 382px;
+            display: none;
+        }     
+        .entre{
+            background-image:  url("entre%20bg.png");
+            position: absolute;
+            left: 28%;
+            top: 10%;
+            width: 600px;
+            height: 350px;  
+            text-align: center;
+            display: block;
+        }     
+        input, button, jou{
+             font-size: 1.8em;
+             margin: 8px;
+             text-align: center;
+        }  
+        h2{
+             color: #803a0f;
+        }
+        .ecri{
+             font-size: 2.0em;   
+             color: #ffffff;
+             background-image:  url("background.jpg");
+             padding-left: 15px;
+        } 
+        .ecri1{
+             font-size: 2.0em;   
+             color: white;
+             background-image:  url("background.jpg");
+             margin-top: 77px;
+        }
+        .envoyer{
+             width:125px;
+             height:40px; 
+             border:solid 1px #000000; 
+             border-radius:51px; 
+             color: black;
+             background-color: red; 
+        }
+        body{
+             background-image: url("jeubg.jpg"); 
+        }  
+        .cjeu{
+             background-image:url("cjeubg.jpg");
+             position: absolute;
+             left: 140px;
+             top: 50px;
+             width: 1060px;
+             height: 590px;  
+             text-align: center;
+             display: none;
+        }
+        h1{
+             font-size: 1.9em;
+             color: red;
+             text-align: center;
+             background-color: rgba(255, 255, 255, 0); 
+        }
+        .pt{
+             font-family:cursive;
+             font-size: 1.5em;
+             color: #000000;
+        }
+        .cpjeu{
+             background-image: url(cpjeubg.jpg);
+             position: absolute;
+             left: 400px;
+             top: 100px;
+             width: 490px;
+             height: 350px;  
+             text-align: center;
+             display: none;
+             padding-left: 5px;
+        }
+        .quest{
+             font-size: 2.0em;
+             font-family:cursive;
+             color: #1550ad;
+        }
+        .qst{
+             font-size: 1.5em;
+             font-family:cursive;
+             color: black;
+             background-image: url(rec.png);
+             margin-top: 42px;
+             display: none;
+        }
+        .qst10{
+             font-size: 1.5em;
+             font-family:cursive;
+             color: black;
+             background-image: url(rec.png);
+             margin-top: -10px;
+             display: none;
+        }
+        .rec{
+             width:200px;
+             height:36px; 
+             border:solid 1px #000000; 
+             border-radius:51px; 
+             color: black;
+             background-color: red;
+             display: none;
+        }
+        .rad1{
+             color: #1550ad;
+             font-size: 1.1em;
+             font-family: cursive;
+        }
+       
+        .point{
+             background-image: url(pointage.jpg);
+             position: absolute;
+             left: 1087px;
+             top: 50px;
+             width: 112px;
+             height: 590px;  
+             text-align: center;
+             display: none;
+        }
+        .b1{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 70px;
+             display: none;
+        }
+        .b2{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 120px;
+             display: none;
+        }
+        .b3{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 170px;
+             display: none;
+        } 
+        .b4{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 220px;
+             display: none;
+        }
+        .b5{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 270px;
+             display: none;
+        }
+        .b6{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 320px;
+             display: none;
+        }
+        .b7{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 370px;
+             display: none;
+        } 
+        .b8{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 420px;
+             display: none;
+        }
+        .b9{ 
+             height: 50px;
+             position: absolute;
+             left: 55px;
+             top: 470px;
+             display: none;
+        }
+        .b10{ 
+             height: 59px;
+             position: absolute;
+             left: 28px;
+             top: 525px;
+             display: none;
+        }
+        .pourcen{ 
+             color: #ffffff;
+             font-size: 2.0em;  
+             text-align: center;
+             background-image:  url("background.jpg");
+             position: absolute;
+             left: 30%;
+             top: 1%;
+             width: 550px;
+             display: none;
+        }      
+        .infor{ 
+            position: absolute;
+            left: 110px;
+            top: 50px;
+            width: 25px;
+            display: none;
+        }
+        .inforjeu{ 
+            position: absolute;
+            left: 38%;
+            top: 420px;
+            width: 40px;
+            display: none;
+        }
+        .fermeinfo{ 
+            position: absolute;
+            left: 110px;
+            top: 50px;
+            width: 25px;
+            display: none;
+        }
+        .fermejeu{ 
+            position: absolute;
+            left: 70%;
+            top: 71px;
+            width: 25px;
+            display: none;
+        }
+        .info{ 
+             position: absolute;
+             left: 4px;
+             top: 75px;
+             width: 131px;
+             height: 313px;
+             background-color: rgba(75, 75, 75, 0.31);
+             border:solid 2px #000000;
+             border-radius:10px;
+             text-align: center;
+             display: none;
+        }
+        .pedmas{ 
+             position: absolute;
+             left: 4px;
+             top: 53px;
+             width: 125px;
+             text-align: center;
+         }
+        .ttpedmas{ 
+             position: absolute;
+             left: 4px;
+             top: 23px;
+             width: 125px;
+             text-align: center;
+             color: red;
+             font-size: 1.9em;
+         }
+         .ttfoix{ 
+             position: absolute;
+             left: 4px;
+             top: 197px;
+             width: 125px;
+             text-align: center;
+             color: red;
+             font-size: 1.3em;
+         }
+        .foix{ 
+             position: absolute;
+             left: 4px;
+             top: 247px;
+             width: 125px;
+             text-align: center;
+             color: blue;
+             font-size: 1.5em;
+             background-color: white;
+         }
+        .infojeu{ 
+             position: absolute;
+             left: 28%;
+             top: 50px;
+             width: 590px;
+             color: black;
+             text-align: center;
+             font-size: 1.6em;
+             background-color: rgba(255, 255, 255, 0.84);
+             display: none;
+             border:solid 1.7px #000000; 
+             border-radius:51px; 
+             padding: 12px;
+         }
+         .jeutt{ 
+             font-size: 2.0em;
+             font-family: monospace;
+         }
+        .temps{  
+             font-size: 2.0em;
+             font-family: monospace;
+             background: red;
+             position: absolute;
+             left: 1201px;
+             top: 90px;
+             width: 58px;
+             height: 32px;
+             padding-left: 3px;
+             display: none;
+         }
+        .tempsgaz{  
+             position: absolute;
+             left: 1236px;
+             top: 91px;
+             width: 26px;
+             display: none;
+         }
+         .audio{  
+             position: absolute;
+             left: 3px;
+             top: 591px;
+             width: 120px;
+             display: block;
+         }
+        
+        
+    </style>
+     
+ </head>
+    
+<body>
+    
+    <!--temps gaz---------------------------------------------->
+    <div id="temps" class="temps">99</div>
+    <img src="gaz.png" class="tempsgaz" id="tempsgaz">
+    
+    <!--la bart au dessus------------------------------------->
+    <div class="ecri" id="noj"></div>
+      
+    <!--le formulaire----------------------------------------->
+    <div class="entre" id="entre">   
+      <h2>Le jeu de math</h2>
+      
+      <input type="text" id="prenom" placeholder="Prénom"  name="prenom"><br> 
+      <br><input type="text" id="nom" placeholder="Nom"  name="nom"><br> 
+      <br><input type="button" class="envoyer" id="Envoyer" onclick="Envoyer()"value="Envoyer" /><br>
+        
+      <div class="ecri1" id="mng"></div>
+        
+      <button id="Jou"style="display:none;" class="envoyer" onclick="Jou()"value="Jou">Jouer</button>
+    </div>
+    
+    <!--information pour idée------------------------------------------>   
+     <img src="information.png" type="button"id="infor" class="infor" onclick="infor()">
+    <div id="info" class="info">
+        <div class="ttpedmas">PEDMAS</div>   
+        <img src="pedmas.png" class="pedmas">
+        <div class="ttfoix">Multiplication <br> (x)</div>
+        <div class="foix">(2)3 = 2x3</div>
+    </div>
+     <img src="fermeinfo.png" onclick="fermeinfo()" class="fermeinfo" id="fermeinfo"> 
+    
+    <!--information jeu------------------------------------------>
+    <img src="information.png" type="button"id="inforjeu" class="inforjeu" onclick="inforjeu()">
+    <div class="infojeu" id="infojeu">
+        <div class="jeutt">Information</div><br>
+        <div>Le jeu de math consiste à se rendre au point d'arriver.</div><br> 
+        <div id="jeuxnom" class="jeuxnom"></div>
+    </div>   
+     <img src="fermeinfo.png" onclick="fermeinfojeu()" class="fermejeu" id="fermejeu"> 
+    
+    <!--arriere plan------------------------------------------>
+    <div class="cjeu" id="cjeu"></div>
+    
+    <!--pointage------------------------------------------>
+    <div class="point" id="point"> 
+      <div class="pt" id="pt">Pointage</div>
+      <img src="auto.png" class="b1" id="b1">
+      <img src="auto.png" class="b2" id="b2">
+      <img src="auto.png" class="b3" id="b3">
+      <img src="auto.png" class="b4" id="b4">
+      <img src="auto.png" class="b5" id="b5">
+      <img src="auto.png" class="b6" id="b6">
+      <img src="auto.png" class="b7" id="b7">
+      <img src="auto.png" class="b8" id="b8">
+      <img src="auto.png" class="b9" id="b9">
+      <img src="autogg.png" class="b10" id="b10">
+    </div>
+    
+    <div class="pointecran" id="pointecran"></div>
+    <div class="pointecran2" id="pointecran2"></div>
+    <div class="pointecran2" id="pointecran3">0/10</div>
+    
+    <div id="poursen" class="pourcen"></div>
+    
+    <!--question 1------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu">
+      <br>
+      <div class="quest">5x4=</div>
+      <input type="radio" id="rad1" name="q1" class="rad1" value="20"/>
+      <label for="rad1"><div class="rad1">20</div></label><br>
+      <input type="radio" id="rad2" name="q1" class="rad1" value="25"/>
+      <label for="rad2"><div class="rad1">25</div></label><br>
+      <input type="radio" id="rad3" name="q1" class="rad1" value="15"/>
+      <label for="rad3"><div class="rad1">15</div></label><br>
+      <button id="bonrep1" class="envoyer" onclick="bonrep1()" value="bonrep1">Réponse</button>
+      <div id="bonrec" style="display: none" class="qst"></div>
+      <div id="rater1" style="display: none" class="qst"></div>
+      <button type="button" class="envoyer" id="suive" onclick="suive()"value="suive" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco" onclick="reco()"value="reco">Recommence</button> 
+    </div>
+    
+     <!--question 2------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu2">
+      <br>
+      <div class="quest">8x7=</div>
+      <input type="radio" id="rad12" name="q2" class="rad1" value="65"/>
+      <label for="rad12"><div class="rad1">65</div></label><br>
+      <input type="radio" id="rad22" name="q2" class="rad1" value="56"/>
+      <label for="rad22"><div class="rad1">56</div></label><br>
+      <input type="radio" id="rad32" name="q2" class="rad1" value="49"/>
+      <label for="rad32"><div class="rad1">49</div></label><br>
+      <button id="bonrep2" class="envoyer" onclick="bonrep2()" value="bonrep2">Réponse</button>
+      <div id="bonrec2" style="display: none" class="qst"></div>
+      <div id="rater2" style="display: none" class="qst"></div>
+      <button type="button" class="envoyer" id="suive2" onclick="suive2()"value="suive2" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco2" onclick="reco2()"value="reco2">Recommence</button> 
+    </div>
+    
+    <!--question 3------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu3">
+      <br>
+      <div class="quest">2+9x7=</div>
+      <input type="radio" id="rad13" name="q3" class="rad1" value="65"/>
+      <label for="rad1"><div class="rad1">65</div></label><br>
+      <input type="radio" id="rad23" name="q3" class="rad1" value="70"/>
+      <label for="rad2"><div class="rad1">70</div></label><br>
+      <input type="radio" id="rad33" name="q3" class="rad1" value="77"/>
+      <label for="rad3"><div class="rad1">77</div></label><br>
+      <button id="bonrep3" class="envoyer" onclick="bonrep3()" value="bonrep2">Réponse</button>
+      <div id="bonrec3" style="display: none" class="qst"></div>
+      <div id="rater3" style="display: none" class="qst"></div>
+      <button type="button" class="envoyer" id="suive3" onclick="suive3()" value="suive3" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco3" onclick="reco3()"value="reco3">Recommence</button> 
+    </div>
+    
+    <!--question 4------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu4">
+      <br>
+      <div class="quest">2-5(7)=</div>
+      <input type="radio" id="rad14" name="q4" class="rad1" value="33"/>
+      <label for="rad1"><div class="rad1">33</div></label><br>
+      <input type="radio" id="rad24" name="q4" class="rad1" value="21"/>
+      <label for="rad2"><div class="rad1">21</div></label><br>
+      <input type="radio" id="rad34" name="q4" class="rad1" value="-33"/>
+      <label for="rad3"><div class="rad1">-33</div></label><br>
+      <button id="bonrep4" class="envoyer" onclick="bonrep4()" value="bonrep4">Réponse</button>
+      <div id="bonrec4" class="qst"></div>
+      <div id="rater4" class="qst"></div>
+      <button type="button" class="envoyer" id="suive4" onclick="suive4()"value="suive4" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco4" onclick="reco4()"value="reco4">Recommence</button> 
+    </div>
+    
+    <!--question 5------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu5">
+      <br>
+      <div class="quest">4x_= 100</div>
+      <input type="radio" id="rad15" name="q5" class="rad1" value="20"/>
+      <label for="rad1"><div class="rad1">20</div></label><br>
+      <input type="radio" id="rad25" name="q5" class="rad1" value="25"/>
+      <label for="rad2"><div class="rad1">25</div></label><br>
+      <input type="radio" id="rad35" name="q5" class="rad1" value="60"/>
+      <label for="rad3"><div class="rad1">60</div></label><br>
+      <button id="bonrep5" class="envoyer" onclick="bonrep5()" value="bonrep5">Réponse</button>
+      <div id="bonrec5" class="qst"></div>
+      <div id="rater5" class="qst"></div>
+      <button type="button" class="envoyer" id="suive5" onclick="suive5()"value="suive5" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco5" onclick="reco5()"value="reco5">Recommence</button> 
+    </div>
+    
+    <!--question 6------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu6">
+      <br>
+      <div class="quest">15x_= 105</div>
+      <input type="radio" id="rad16" name="q6" class="rad1" value="10"/>
+      <label for="rad1"><div class="rad1">10</div></label><br>
+      <input type="radio" id="rad26" name="q6" class="rad1" value="8"/>
+      <label for="rad2"><div class="rad1">8</div></label><br>
+      <input type="radio" id="rad36" name="q6" class="rad1" value="6"/>
+      <label for="rad3"><div class="rad1">7</div></label><br>
+      <button id="bonrep6" class="envoyer" onclick="bonrep6()" value="bonrep6">Réponse</button>
+      <div id="bonrec6" class="qst"></div>
+      <div id="rater6" class="qst"></div>
+      <button type="button" class="envoyer" id="suive6" onclick="suive6()"value="suive6" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco6" onclick="reco6()"value="reco6">Recommence</button> 
+    </div>
+    
+    <!--question 7------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu7">
+      <br>
+      <div class="quest">13x_= 117</div>
+      <input type="radio" id="rad17" name="q7" class="rad1" value="10"/>
+      <label for="rad1"><div class="rad1">10</div></label><br>
+      <input type="radio" id="rad27" name="q7" class="rad1" value="8"/>
+      <label for="rad2"><div class="rad1">8</div></label><br>
+      <input type="radio" id="rad37" name="q7" class="rad1" value="9"/>
+      <label for="rad3"><div class="rad1">9</div></label><br>
+      <button id="bonrep7" class="envoyer" onclick="bonrep7()" value="bonrep7">Réponse</button>
+      <div id="bonrec7" class="qst"></div>
+      <div id="rater7" class="qst"></div>
+      <button type="button" class="envoyer" id="suive7" onclick="suive7()"value="suive7" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco7" onclick="reco7()"value="reco7">Recommence</button> 
+    </div>
+    
+    <!--question 8------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu8">
+      <br>
+      <div class="quest">12/_= 6</div>
+      <input type="radio" id="rad18" name="q8" class="rad1" value="2"/>
+      <label for="rad1"><div class="rad1">2</div></label><br>
+      <input type="radio" id="rad28" name="q8" class="rad1" value="4"/>
+      <label for="rad2"><div class="rad1">4</div></label><br>
+      <input type="radio" id="rad38" name="q8" class="rad1" value="6"/>
+      <label for="rad3"><div class="rad1">6</div></label><br>
+      <button id="bonrep8" class="envoyer" onclick="bonrep8()" value="bonrep8">Réponse</button>
+      <div id="bonrec8" class="qst"></div>
+      <div id="rater8" class="qst"></div>
+      <button type="button" class="envoyer" id="suive8" onclick="suive8()"value="suive8" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco8" onclick="reco8()"value="reco8">Recommence</button> 
+    </div>
+    
+    <!--question 9------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu9">
+      <br>
+      <div class="quest">11x_-6= 115</div>
+      <input type="radio" id="rad19" name="q9" class="rad1" value="13"/>
+      <label for="rad1"><div class="rad1">13</div></label><br>
+      <input type="radio" id="rad29" name="q9" class="rad1" value="11"/>
+      <label for="rad2"><div class="rad1">11</div></label><br>
+      <input type="radio" id="rad39" name="q9" class="rad1" value="9"/>
+      <label for="rad3"><div class="rad1">9</div></label><br>
+      <button id="bonrep9" class="envoyer" onclick="bonrep9()" value="bonrep9">Réponse</button>
+      <div id="bonrec9" class="qst"></div>
+      <div id="rater9" class="qst"></div>
+      <button type="button" class="envoyer" id="suive9" onclick="suive9()"value="suive9" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco9" onclick="reco9()"value="reco9">Recommence</button> 
+    </div> 
+    
+    <!--question 10------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu10">
+      <br>
+      <div class="quest">14+7x7-15/5=</div>
+      <input type="radio" id="rad110" name="q10" class="rad1" value="44"/>
+      <label for="rad1"><div class="rad1">44</div></label><br>
+      <input type="radio" id="rad210" name="q10" class="rad1" value="60"/>
+      <label for="rad2"><div class="rad1">60</div></label><br>
+      <input type="radio" id="rad310" name="q10" class="rad1" value="16"/>
+      <label for="rad3"><div class="rad1">16</div></label><br>
+      <input type="radio" id="rad410" name="q10" class="rad1" value="63"/>
+      <label for="rad4"><div class="rad1">63</div></label><br>
+      <button id="bonrep10" class="envoyer" onclick="bonrep10()" value="bonrep10">Réponse</button>
+      <div id="bonrec10" class="qst10"></div>
+      <div id="rater10" class="qst10"></div>
+      <button type="button" class="envoyer" id="suive10" onclick="suive10()"value="suive10" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco10" onclick="reco10()"value="reco10">Recommence</button> 
+    </div>
+    
+    <!--question 11------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu11">
+      <br>
+      <div class="quest">14+15/5=</div>
+      <input type="radio" id="rad111" name="q11" class="rad1" value="17"/>
+      <label for="rad1"><div class="rad1">17</div></label><br>
+      <input type="radio" id="rad211" name="q11" class="rad1" value="18"/>
+      <label for="rad2"><div class="rad1">18</div></label><br>
+      <input type="radio" id="rad311" name="q11" class="rad1" value="16"/>
+      <label for="rad3"><div class="rad1">16</div></label><br>
+      <button id="bonrep11" class="envoyer" onclick="bonrep11()" value="bonrep11">Réponse</button>
+      <div id="bonrec11" class="qst"></div>
+      <div id="rater11" class="qst"></div>
+      <button type="button" class="envoyer" id="suive11" onclick="suive11()"value="suive11" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco11" onclick="reco11()"value="reco11">Recommence</button> 
+    </div>
+    
+    <!--question 12------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu12">
+      <br>
+      <div class="quest">(17+3)2x3=</div>
+      <input type="radio" id="rad112" name="q12" class="rad1" value="54"/>
+      <label for="rad1"><div class="rad1">54</div></label><br>
+      <input type="radio" id="rad212" name="q12" class="rad1" value="51"/>
+      <label for="rad2"><div class="rad1">51</div></label><br>
+      <input type="radio" id="rad312" name="q12" class="rad1" value="120"/>
+      <label for="rad3"><div class="rad1">120</div></label><br>
+      <button id="bonrep12" class="envoyer" onclick="bonrep12()" value="bonrep12">Réponse</button>
+      <div id="bonrec12" class="qst"></div>
+      <div id="rater12" class="qst"></div>
+      <button type="button" class="envoyer" id="suive12" onclick="suive12()"value="suive12" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco12" onclick="reco12()"value="reco12">Recommence</button> 
+    </div>
+    
+    <!--question 13------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu13">
+      <br>
+      <div class="quest">8x6=7x_-1</div>
+      <input type="radio" id="rad113" name="q13" class="rad1" value="8"/>
+      <label for="rad1"><div class="rad1">8</div></label><br>
+      <input type="radio" id="rad213" name="q13" class="rad1" value="7"/>
+      <label for="rad2"><div class="rad1">7</div></label><br>
+      <input type="radio" id="rad313" name="q13" class="rad1" value="6"/>
+      <label for="rad3"><div class="rad1">6</div></label><br>
+      <button id="bonrep13" class="envoyer" onclick="bonrep13()" value="bonrep13">Réponse</button>
+      <div id="bonrec13" class="qst"></div>
+      <div id="rater13" class="qst"></div>
+      <button type="button" class="envoyer" id="suive13" onclick="suive13()"value="suive13" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco13" onclick="reco13()"value="reco13">Recommence</button> 
+    </div>
+    
+    <!--question 14------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu14">
+      <br>
+      <div class="quest">8x9-2=5x_</div>
+      <input type="radio" id="rad114" name="q14" class="rad1" value="13"/>
+      <label for="rad1"><div class="rad1">13</div></label><br>
+      <input type="radio" id="rad214" name="q14" class="rad1" value="15"/>
+      <label for="rad2"><div class="rad1">15</div></label><br>
+      <input type="radio" id="rad314" name="q14" class="rad1" value="14"/>
+      <label for="rad3"><div class="rad1">14</div></label><br>
+      <button id="bonrep14" class="envoyer" onclick="bonrep14()" value="bonrep14">Réponse</button>
+      <div id="bonrec14" class="qst"></div>
+      <div id="rater14" class="qst"></div>
+      <button type="button" class="envoyer" id="suive14" onclick="suive14()"value="suive14" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco14" onclick="reco14()"value="reco14">Recommence</button> 
+    </div>
+    
+    <!--question 15------------------------------------------------------>
+    <div class="cpjeu" id="cpjeu15">
+      <br>
+      <div class="quest">16x6=</div>
+      <input type="radio" id="rad115" name="q15" class="rad1" value="(-8)x(-12)"/>
+      <label for="rad1"><div class="rad1">(-8)x(-12)</div></label><br>
+      <input type="radio" id="rad215" name="q15" class="rad1" value="(-8)12"/>
+      <label for="rad2"><div class="rad1">(-8)12</div></label><br>
+      <input type="radio" id="rad315" name="q15" class="rad1" value="4x23"/>
+      <label for="rad3"><div class="rad1">4x23</div></label><br>
+      <button id="bonrep15" class="envoyer" onclick="bonrep15()" value="bonrep15">Réponse</button>
+      <div id="bonrec15" class="qst"></div>
+      <div id="rater15" class="qst"></div>
+      <button type="button" class="envoyer" id="suive15" onclick="suive15()"value="suive15" style="display: none">Suivant</button>
+      <button type="button" class="rec" id="reco15" onclick="reco15()"value="reco15">Recommence</button> 
+    </div>
+    
+    <!--gagnier-------------------------------------------------->
+    <img src="autogg.png" class="ggimg" id="ggimg">
+    <a href="jeu%20math.html"><div class="ggbutton" type="button" id="ggbutton">Recommencé <br> le jeu</div></a>
+    
+    <!--fin------------------------------------------------------>
+    <a href="jeu%20math.html"><div class="fin" type="button" id="fin">Jeux terminé</div></a>
+    <img src= "fin.png" class="finimg" id="finimg">
+    <img src= "pas%20gaz.png" class="fingaz" id="fingaz">
+ <script>
+ 
+   //-pointage-----------------------------------> 
+   var bonne = 0;
+     
+   function affichep(){
+       
+        if(bonne<=0){
+           //affiche style et message 
+           b1.style.display= "none";
+           b2.style.display= "none";
+           b3.style.display= "none";
+           pointecran3.style.display= "block";
+           poursen.innerHTML= "Tu as fini avec 0%";
+        }
+        else if(bonne==1){
+           //affiche style et message 
+           b1.style.display= "block";
+           b2.style.display= "none";
+           b4.style.display= "none";
+           b3.style.display= "none";
+           pointecran3.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 10%";
+        }
+        else if(bonne==2){
+           //affiche style et message 
+           b1.style.display= "none";
+           b2.style.display= "block";
+           b3.style.display= "none";
+           b4.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 20%";
+        }
+        else if(bonne==3){
+           //affiche style et message 
+           b2.style.display= "none";
+           b3.style.display= "block";
+           b4.style.display= "none";
+           b5.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 30%";
+        }
+        else if(bonne==4){
+           //affiche style et message 
+           b3.style.display= "none";
+           b4.style.display= "block";
+           b5.style.display= "none";
+           b6.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 40%";
+        }
+        else if(bonne==5){
+           //affiche style et message 
+           b4.style.display= "none";
+           b5.style.display= "block";
+           b6.style.display= "none";
+           b7.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 50%";
+        }
+        else if(bonne==6){
+           //affiche style et message 
+           b5.style.display= "none";
+           b6.style.display= "block";
+           b7.style.display= "none";
+           b8.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 60%";
+        }
+        else if(bonne==7){
+           //affiche style et message 
+           b6.style.display= "none";
+           b7.style.display= "block";
+           b8.style.display= "none";
+           b10.style.display= "none";
+           b9.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 70%";
+        }
+        else if(bonne==8){
+           //affiche style et message 
+           b7.style.display= "none";
+           b8.style.display= "block";
+           b9.style.display= "none";
+           b10.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 80%";
+        }
+        else if(bonne==9){
+           //affiche style et message 
+           b8.style.display= "none";
+           b9.style.display= "block"; 
+           b10.style.display= "none";
+           poursen.innerHTML= "Tu as fini avec 90%";
+        }
+        else if(bonne==10){
+           //affiche style et message 
+           b9.style.display= "none";
+           b10.style.display= "block";
+           ggimg.style.display= "block";
+           ggbutton.style.display= "block";
+           poursen.style.display= "block";
+           poursen.innerHTML= "Tu as fini avec 100%";
+        }
+        // chercher les données
+        var pointecran= document.getElementById("pointecran");
+        var pointecran2= document.getElementById("pointecran2");
+       
+        //crée le message 
+        var poinercan= bonne + "/10";
+        
+        // affiche le message
+        pointecran.innerHTML= poinercan;
+        pointecran2.style.display= "none";
+        pointecran.style.display= "block";
+    }
+     
+//--temps gaz-------------------------------------------------->
+     var chrono;
+     var temps;
+     var finchro = 0;
+     
+     function tempsaff(){
+        //Chercher le temps du gaz 
+        var idtemps= document.getElementById("temps");
+        var tempsgaz= document.getElementById("tempsgaz");
+        var fin= document.getElementById("fin");
+        var fingaz= document.getElementById("fingaz");
+        var finimg= document.getElementById("finimg"); 
+        var poursen= document.getElementById("poursen");
+        var cpjeu= document.getElementById("cpjeu");
+        var cpjeu2= document.getElementById("cpjeu2");
+        var cpjeu3= document.getElementById("cpjeu3");
+        var cpjeu4= document.getElementById("cpjeu4");
+        var cpjeu5= document.getElementById("cpjeu5");
+        var cpjeu6= document.getElementById("cpjeu6");
+        var cpjeu7= document.getElementById("cpjeu7");
+        var cpjeu8= document.getElementById("cpjeu8");
+        var cpjeu9= document.getElementById("cpjeu9");
+        var cpjeu10= document.getElementById("cpjeu10");
+        var cpjeu11= document.getElementById("cpjeu11");
+        var cpjeu12= document.getElementById("cpjeu12");
+        var cpjeu13= document.getElementById("cpjeu13");
+        var cpjeu14= document.getElementById("cpjeu14");
+        var cpjeu15= document.getElementById("cpjeu15");
+        
+        //Calecule le temps 
+        temps= parseInt(idtemps.innerHTML);
+        temps= temps -1;
+        
+        //Affiche le temps du gaz
+        idtemps.innerHTML= temps;
+        
+        if(temps==0){
+            clearInterval(chrono);
+            idtemps.style.display= "none";
+            tempsgaz.style.display= "none";
+            fin.style.display= "block";
+            fingaz.style.display= "block";  
+            poursen.style.display= "block";
+            cpjeu.style.display= "none";
+            cpjeu2.style.display= "none";
+            cpjeu3.style.display= "none";
+            cpjeu4.style.display= "none";
+            cpjeu5.style.display= "none";
+            cpjeu6.style.display= "none";
+            cpjeu7.style.display= "none";
+            cpjeu8.style.display= "none";
+            cpjeu9.style.display= "none";
+            cpjeu10.style.display= "none";
+            cpjeu11.style.display= "none";
+            cpjeu12.style.display= "none";
+            cpjeu13.style.display= "none";
+            cpjeu14.style.display= "none";
+            cpjeu15.style.display= "none";
+        }
+        if(bonne==10){
+            clearInterval(chrono);
+        }
+        if(finchro==1){
+            clearInterval(chrono);
+        }
+    }
+    
+//--infomation----------------------------------------------------->                                   
+    function infor(){ 
+         //chercher les données
+         var info= document.getElementById("info");
+         var fermeinfo= document.getElementById("fermeinfo");
+        
+         //Affiche
+         fermeinfo.style.display= "block";
+         info.style.display= "block";
+    }
+    function fermeinfo(){ 
+         //chercher les données
+         var info= document.getElementById("info");
+         var fermeinfo= document.getElementById("fermeinfo");
+        
+         //Affiche
+         fermeinfo.style.display= "none";
+         info.style.display= "none";
+    }
+     
+//--infomation jeu-------------------------------------------------> 
+    function inforjeu(){ 
+         //chercher les données
+         var infojeu= document.getElementById("infojeu");
+         var fermejeu= document.getElementById("fermejeu");
+        
+         //Affiche
+         fermejeu.style.display= "block";
+         infojeu.style.display= "block";
+    }
+    function fermeinfojeu(){ 
+         //chercher les données
+         var infojeu= document.getElementById("infojeu");
+         var fermejeu= document.getElementById("fermejeu");
+        
+         //Affiche
+         fermejeu.style.display= "none";
+         infojeu.style.display= "none";
+    }
+    
+//--formulaier----------------------------------------------------->
+   function Envoyer(){
+        //Chercher les données dans les boite de texte
+        var prenom= document.getElementById("prenom").value;
+        var nom= document.getElementById("nom").value;
+        var mng= document.getElementById("mng");
+        var Envoyer= document.getElementById("Envoyer");
+        var jeunom= document.getElementById("jeuxnom");
+        var inforjeu= document.getElementById("inforjeu");
+       
+        //Construire le message
+        var message="Bonne chance " + prenom + " " + nom + "!";
+        var infomessage="Toi (" + prenom + " " + nom + ") tu dois répondre correctement a la question, à chaque bonne réponse la voiture avancera. <br><br> Il y a 15 questions il faut 10 bonne réponses pour gagner. <br><br> Si tu n'as pas répondus a plus de 10 questions correctement, la voiture prendra feu. <br><br> Tu as 3 minutes 30 secondes pour que l'essence soit à 0. <br> Si l'essence est à 0 le jeu est terminé.";
+       
+        //Afficher le message
+        mng.innerHTML= message;
+        jeunom.innerHTML= infomessage
+        
+        //Affiche les bouton et les pages
+        var boutonJouer= document.getElementById("Jou");
+        boutonJouer.style.display= "block";
+        Envoyer.style.display= "none";
+        inforjeu.style.display= "block";
+        
+   } 
+     
+   function Jou(){
+        //Cherche les données
+        var prenom= document.getElementById("prenom").value;
+        var nonjoueur= document.getElementById("noj");
+        var entre= document.getElementById("entre");
+        var cartrejeu= document.getElementById("cjeu");
+        var completjeu= document.getElementById("cpjeu");
+        var pointage= document.getElementById("point");
+        var infor= document.getElementById("infor");
+        var pointecran2= document.getElementById("pointecran2");
+        var temps= document.getElementById("temps");
+        var tempsgaz= document.getElementById("tempsgaz");
+        
+        //Construire le message
+        var messaje= " Nom: " + prenom;   
+        var poinercan="0/10";
+       
+        //Affiche les styles
+        entre.style.display= "none";
+        nonjoueur.style.display= "block";
+        cartrejeu.style.display= "block";
+        completjeu.style.display= "block";
+        pointage.style.display= "block";
+        noj.innerHTML= messaje;
+        pointecran2.innerHTML= poinercan;
+        pointecran2.style.display= "block";
+        infor.style.display= "block";
+        temps.style.display= "block";
+        tempsgaz.style.display= "block";
+        chrono = setInterval(tempsaff, 2101);
+   } 
+        
+     
+//Question 1---------------------------------------------------------------->
+   function bonrep1(){
+        //Cherche les données
+        var rad1= document.getElementById("rad1").checked;
+        var suive= document.getElementById("suive");
+        var bonrec= document.getElementById("bonrec");
+        var rater1= document.getElementById("reco");
+        var bonrep1= document.getElementById("bonrep1");
+       
+        //Contuire le message selon la reponce
+        if(rad1==true){
+            bonrec.innerHTML= "Bonne réponse";
+            suive.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec.innerHTML= "Mauvaise réponse <br> la bonne réponse est 20";
+            rater1.style.display= "block";
+            bonne = 0;
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec.style.display= "block";
+        bonrep1.style.display= "none";
+   } 
+     
+   function suive(){
+        //Cherche les données       
+        var cpjeu2= document.getElementById("cpjeu2");
+        var cpjeu= document.getElementById("cpjeu");
+       
+        //Affiche les styles
+        cpjeu2.style.display= "block";   
+        cpjeu.style.display= "none"; 
+   }      
+     
+   function reco(){
+        //Cherche les données
+        var cpjeu2= document.getElementById("cpjeu2");
+        var cpjeu= document.getElementById("cpjeu");
+       
+        //Affiche les styles
+        cpjeu2.style.display= "block";   
+        cpjeu.style.display= "none";   
+   } 
+     
+//Question 2 ----------------------------------------------------------->
+  function bonrep2(){
+        //Cherche les données
+        var rad22= document.getElementById("rad22").checked;
+        var suive2= document.getElementById("suive2");
+        var bonrec2= document.getElementById("bonrec2");
+        var rater2= document.getElementById("reco2");
+        var bonrep2= document.getElementById("bonrep2");
+       
+        //Contuire le message selon la reponce
+        if(rad22==true){
+            bonrec2.innerHTML= "Bonne réponse!";
+            suive2.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec2.innerHTML= "Mauvaise réponse <br> la bonne réponse est 56";
+            rater2.style.display= "block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+      
+        //Affiche les styles
+        bonrec2.style.display= "block";
+        bonrep2.style.display= "none";
+  }  
+     
+  function reco2(){
+        //Cherche les données
+        var cpjeu2= document.getElementById("cpjeu2");
+        var cpjeu3= document.getElementById("cpjeu3"); 
+        
+        //Affiche les styles
+        cpjeu2.style.display= "none";
+        cpjeu3.style.display= "block";
+  }     
+     
+  function suive2(){
+        //Cherche les données
+        var cpjeu2= document.getElementById("cpjeu2");
+        var cpjeu3= document.getElementById("cpjeu3"); 
+        
+        //Affiche les styles
+        cpjeu2.style.display= "none";
+        cpjeu3.style.display= "block";
+  }
+    
+  //Question 3---------------------------------------------------------------->
+   function bonrep3(){
+        //Cherche les données
+        var rad13= document.getElementById("rad13").checked;
+        var suive3= document.getElementById("suive3");
+        var bonrec3= document.getElementById("bonrec3");
+        var rater3= document.getElementById("reco3");
+        var bonrep3= document.getElementById("bonrep3");
+       
+        //Contuire le message selon la reponce
+        if(rad13==true){
+            bonrec3.innerHTML= "Bonne réponse";
+            suive3.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec3.innerHTML= "Mauvaise réponse <br> la bonne réponse est 65 (PEDMAS)";
+            rater3.style.display= "block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec3.style.display= "block";
+        bonrep3.style.display= "none";
+   } 
+     
+   function suive3(){
+        //Cherche les données       
+        var cpjeu3= document.getElementById("cpjeu3");
+        var cpjeu4= document.getElementById("cpjeu4");
+       
+        //Affiche les style 
+        cpjeu3.style.display= "none"; 
+        cpjeu4.style.display= "block";
+   }
+
+   function reco3(){
+        //Cherche les données       
+        var cpjeu3= document.getElementById("cpjeu3");
+        var cpjeu4= document.getElementById("cpjeu4");
+       
+        //Affiche les style 
+        cpjeu3.style.display= "none"; 
+        cpjeu4.style.display= "block";
+   }      
+   
+ //Question 4---------------------------------------------------------------->
+   function bonrep4(){
+        //Cherche les données
+        var rad34= document.getElementById("rad34").checked;
+        var suive4= document.getElementById("suive4");
+        var bonrec4= document.getElementById("bonrec4");
+        var rater4= document.getElementById("reco4");
+        var bonrep4= document.getElementById("bonrep4");
+        
+        //Contuire le message selon la reponce
+        if(rad34==true){
+            bonrec4.innerHTML="Bonne réponse";
+            suive4.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec4.innerHTML="Mauvaise réponse <br> la bonne réponse est -33 (PEDMAS) <br> 5(7) = 5x7";
+            rater4.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec4.style.display="block";
+        bonrep4.style.display="none";
+   } 
+     
+   function suive4(){
+        var cpjeu4= document.getElementById("cpjeu4");
+        var cpjeu5= document.getElementById("cpjeu5");
+       
+        //Affiche les style 
+        cpjeu4.style.display= "none"; 
+        cpjeu5.style.display= "block";
+   }  
+     
+   function reco4(){
+        //Cherche les données
+        var cpjeu4= document.getElementById("cpjeu4");
+        var cpjeu5= document.getElementById("cpjeu5");
+        
+        //Affiche les styles   
+        cpjeu4.style.display= "none"; 
+        cpjeu5.style.display= "block";
+   }
+     
+//Question 5---------------------------------------------------------------->
+   function bonrep5(){
+        //Cherche les données
+        var rad25= document.getElementById("rad25").checked;
+        var suive5= document.getElementById("suive5");
+        var bonrec5= document.getElementById("bonrec5");
+        var rater5= document.getElementById("reco5");
+        var bonrep5= document.getElementById("bonrep5");
+        
+        //Contuire le message selon la reponce
+        if(rad25==true){
+            bonrec5.innerHTML="Bonne réponse";
+            suive5.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec5.innerHTML="Mauvaise réponse <br> la bonne réponse est 25 ";
+            rater5.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec5.style.display="block";
+        bonrep5.style.display="none";
+   } 
+     
+   function suive5(){
+        var cpjeu6= document.getElementById("cpjeu6");
+        var cpjeu5= document.getElementById("cpjeu5");
+       
+        //Affiche les style 
+        cpjeu5.style.display= "none"; 
+        cpjeu6.style.display= "block";
+   } 
+     
+   function reco5(){
+        //Cherche les données
+        var cpjeu6= document.getElementById("cpjeu6");
+        var cpjeu5= document.getElementById("cpjeu5");
+        
+        //Affiche les styles   
+        cpjeu5.style.display= "none"; 
+        cpjeu6.style.display= "block";
+   }
+     
+//Question 6---------------------------------------------------------------->
+   function bonrep6(){
+        //Cherche les données
+        var rad36= document.getElementById("rad36").checked;
+        var suive6= document.getElementById("suive6");
+        var bonrec6= document.getElementById("bonrec6");
+        var rater6= document.getElementById("reco6");
+        var bonrep6= document.getElementById("bonrep6");
+        
+        //Contuire le message selon la reponce
+        if(rad36==true){
+            bonrec6.innerHTML="Bonne réponse";
+            suive6.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec6.innerHTML="Mauvaise réponse <br> la bonne réponse est 7 ";
+            rater6.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec6.style.display="block";
+        bonrep6.style.display="none";
+   } 
+     
+   function suive6(){
+        //Cherche les données
+        var cpjeu7= document.getElementById("cpjeu7");
+        var cpjeu6= document.getElementById("cpjeu6");
+       
+        //Affiche les style 
+        cpjeu6.style.display= "none"; 
+        cpjeu7.style.display= "block";
+   }   
+     
+   function reco6(){
+        //Cherche les données
+        var cpjeu7= document.getElementById("cpjeu7");
+        var cpjeu6= document.getElementById("cpjeu6");
+        
+        //Affiche les styles   
+        cpjeu6.style.display= "none"; 
+        cpjeu7.style.display= "block";
+   }
+     
+//Question 7---------------------------------------------------------------->
+   function bonrep7(){
+        //Cherche les données
+        var rad37= document.getElementById("rad37").checked;
+        var suive7= document.getElementById("suive7");
+        var bonrec7= document.getElementById("bonrec7");
+        var rater7= document.getElementById("reco7");
+        var bonrep7= document.getElementById("bonrep7");
+        
+        //Contuire le message selon la reponce
+        if(rad37==true){
+            bonrec7.innerHTML="Bonne réponse";
+            suive7.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec7.innerHTML="Mauvaise réponse <br> la bonne réponse est 9 ";
+            rater7.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec7.style.display="block";
+        bonrep7.style.display="none";
+   } 
+     
+   function suive7(){
+        //Cherche les données
+        var cpjeu8= document.getElementById("cpjeu8");
+        var cpjeu7= document.getElementById("cpjeu7");
+       
+        //Affiche les style 
+        cpjeu7.style.display= "none"; 
+        cpjeu8.style.display= "block";
+   }      
+     
+   function reco7(){
+        //Cherche les données
+        var cpjeu8= document.getElementById("cpjeu8");
+        var cpjeu7= document.getElementById("cpjeu7");
+        
+        //Affiche les styles   
+        cpjeu7.style.display= "none"; 
+        cpjeu8.style.display= "block";
+   } 
+     
+//Question 8---------------------------------------------------------------->
+   function bonrep8(){
+        //Cherche les données
+        var rad18= document.getElementById("rad18").checked;
+        var suive8= document.getElementById("suive8");
+        var bonrec8= document.getElementById("bonrec8");
+        var rater8= document.getElementById("reco8");
+        var bonrep8= document.getElementById("bonrep8");
+        
+        //Contuire le message selon la reponce
+        if(rad18==true){
+            bonrec8.innerHTML="Bonne réponse";
+            suive8.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec8.innerHTML="Mauvaise réponse <br> la bonne réponse est 2 ";
+            rater8.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec8.style.display="block";
+        bonrep8.style.display="none";
+   }
+     
+   function suive8(){
+        //Cherche les données
+        var cpjeu9= document.getElementById("cpjeu9");
+        var cpjeu8= document.getElementById("cpjeu8");
+       
+        //Affiche les style 
+        cpjeu8.style.display= "none"; 
+        cpjeu9.style.display= "block";
+   }      
+     
+   function reco8(){
+        //Cherche les données
+        var cpjeu9= document.getElementById("cpjeu9");
+        var cpjeu8= document.getElementById("cpjeu8");
+        
+        //Affiche les styles   
+        cpjeu8.style.display= "none"; 
+        cpjeu9.style.display= "block";
+   }
+     
+//Question 9---------------------------------------------------------------->
+   function bonrep9(){
+        //Cherche les données
+        var rad29= document.getElementById("rad29").checked;
+        var suive9= document.getElementById("suive9");
+        var bonrec9= document.getElementById("bonrec9");
+        var rater9= document.getElementById("reco9");
+        var bonrep9= document.getElementById("bonrep9");
+        
+        //Contuire le message selon la reponce
+        if(rad29==true){
+            bonrec9.innerHTML="Bonne réponse";
+            suive9.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec9.innerHTML="Mauvaise réponse <br> la bonne réponse est 11 (PEDMAS) ";
+            rater9.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+       
+        //Affiche les styles
+        bonrec9.style.display="block";
+        bonrep9.style.display="none";
+   } 
+     
+   function suive9(){
+        //Cherche les données
+        var cpjeu9= document.getElementById("cpjeu9");
+        var cpjeu10= document.getElementById("cpjeu10");
+       
+        //Affiche les style 
+        cpjeu9.style.display= "none"; 
+        cpjeu10.style.display= "block";
+   }   
+     
+   function reco9(){
+        //Cherche les données
+        var cpjeu9= document.getElementById("cpjeu9");
+        var cpjeu10= document.getElementById("cpjeu10");
+        
+        //Affiche les styles   
+        cpjeu9.style.display= "none"; 
+        cpjeu10.style.display= "block";
+   }
+     
+//Question 10---------------------------------------------------------------->
+   function bonrep10(){
+        //Cherche les données
+        var rad210= document.getElementById("rad210").checked;
+        var suive10= document.getElementById("suive10");
+        var bonrec10= document.getElementById("bonrec10");
+        var rater10= document.getElementById("reco10");
+        var bonrep10= document.getElementById("bonrep10");
+        var cpjeu10= document.getElementById("cpjeu10");
+       
+        //Contuire le message selon la reponce
+        if(rad210==true){
+            bonrec10.innerHTML="Bonne réponse";
+            suive10.style.display="block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec10.innerHTML="Mauvaise réponse <br> la bonne réponse est 60 (PEDMAS) ";
+            rater10.style.display="block";
+            bonne = bonne -2;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+        if (bonne==10){
+             cpjeu10.style.display= "none";
+        }
+       
+        //Affiche les styles
+        bonrec10.style.display="block";
+        bonrep10.style.display="none";
+   } 
+     
+   function suive10(){
+        //Cherche les données
+        var cpjeu10= document.getElementById("cpjeu10");
+        var cpjeu11= document.getElementById("cpjeu11");
+        
+        //Affiche les style 
+        cpjeu10.style.display= "none"; 
+        cpjeu11.style.display= "block";
+   }      
+     
+   function reco10(){
+        //Cherche les données
+        var cpjeu10= document.getElementById("cpjeu10");
+        var cpjeu11= document.getElementById("cpjeu11");
+       
+        //Affiche les style 
+        cpjeu10.style.display= "none"; 
+        cpjeu11.style.display= "block";
+   }
+     
+//Question 11---------------------------------------------------------------->
+   function bonrep11(){
+        //Cherche les données
+        var rad111= document.getElementById("rad111").checked;
+        var suive11= document.getElementById("suive11");
+        var bonrec11= document.getElementById("bonrec11");
+        var rater11= document.getElementById("reco11");
+        var bonrep11= document.getElementById("bonrep11");
+        var cpjeu11= document.getElementById("cpjeu11");
+       
+        //Contuire le message selon la reponce
+        if(rad111==true){
+            bonrec11.innerHTML="Bonne réponse";
+            suive11.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec11.innerHTML="Mauvaise réponse <br> la bonne réponse est 17 (PEDMAS) ";
+            rater11.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+        if (bonne==10){
+             cpjeu11.style.display= "none";
+        }
+       
+        //Affiche les styles
+        bonrec11.style.display="block";
+        bonrep11.style.display="none";
+   } 
+     
+   function suive11(){
+        //Cherche les données
+        var cpjeu11= document.getElementById("cpjeu11");
+        var cpjeu12= document.getElementById("cpjeu12");
+       
+        //Affiche les style 
+        cpjeu11.style.display= "none"; 
+        cpjeu12.style.display= "block";
+   } 
+     
+   function reco11(){
+        //Cherche les données
+        var cpjeu11= document.getElementById("cpjeu11");
+        var cpjeu12= document.getElementById("cpjeu12");
+       
+        //Affiche les style 
+        cpjeu11.style.display= "none"; 
+        cpjeu12.style.display= "block";
+   }
+     
+//Question 12---------------------------------------------------------------->
+   function bonrep12(){
+        //Cherche les données
+        var rad312= document.getElementById("rad312").checked;
+        var suive12= document.getElementById("suive12");
+        var bonrec12= document.getElementById("bonrec12");
+        var rater12= document.getElementById("reco12");
+        var bonrep12= document.getElementById("bonrep12");
+        var cpjeu12= document.getElementById("cpjeu12");
+       
+        //Contuire le message selon la reponce
+        if(rad312==true){
+            bonrec12.innerHTML="Bonne réponse";
+            suive12.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec12.innerHTML="Mauvaise réponse <br> la bonne réponse est 120 (PEDMAS) ";
+            rater12.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+        if (bonne==10){
+             cpjeu12.style.display= "none";
+        }
+       
+        //Affiche les styles
+        bonrec12.style.display="block";
+        bonrep12.style.display="none";
+   } 
+     
+   function suive12(){
+        //Cherche les données
+        var cpjeu12= document.getElementById("cpjeu12");
+        var cpjeu13= document.getElementById("cpjeu13");
+       
+        //Affiche les style 
+        cpjeu12.style.display= "none"; 
+        cpjeu13.style.display= "block";
+   } 
+     
+   function reco12(){
+        //Cherche les données
+        var cpjeu12= document.getElementById("cpjeu12");
+        var cpjeu13= document.getElementById("cpjeu13");
+       
+        //Affiche les style 
+        cpjeu12.style.display= "none"; 
+        cpjeu13.style.display= "block";
+   }
+     
+//Question 13---------------------------------------------------------------->
+   function bonrep13(){
+        //Cherche les données
+        var rad213= document.getElementById("rad213").checked;
+        var suive13= document.getElementById("suive13");
+        var bonrec13= document.getElementById("bonrec13");
+        var rater13= document.getElementById("reco13");
+        var bonrep13= document.getElementById("bonrep13");
+        var cpjeu13= document.getElementById("cpjeu13");
+       
+        //Contuire le message selon la reponce
+        if(rad213==true){
+            bonrec13.innerHTML="Bonne réponse";
+            suive13.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec13.innerHTML="Mauvaise réponse <br> la bonne réponse est 7 (PEDMAS) ";
+            rater13.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+        if (bonne==10){
+             cpjeu13.style.display= "none";
+        }
+       
+        //Affiche les styles
+        bonrec13.style.display="block";
+        bonrep13.style.display="none";
+   } 
+     
+   function suive13(){
+        //Cherche les données
+        var cpjeu13= document.getElementById("cpjeu13");
+        var cpjeu14= document.getElementById("cpjeu14");
+       
+        //Affiche les style 
+        cpjeu13.style.display= "none";
+        cpjeu14.style.display= "block"; 
+   }  
+     
+   function reco13(){
+        //Cherche les données
+        var cpjeu13= document.getElementById("cpjeu13");
+        var cpjeu14= document.getElementById("cpjeu14");
+       
+        //Affiche les style 
+        cpjeu13.style.display= "none"; 
+        cpjeu14.style.display= "block";
+   }
+     
+//Question 14---------------------------------------------------------------->
+   function bonrep14(){
+        //Cherche les données
+        var rad314= document.getElementById("rad314").checked;
+        var suive14= document.getElementById("suive14");
+        var bonrec14= document.getElementById("bonrec14");
+        var rater14= document.getElementById("reco14");
+        var bonrep14= document.getElementById("bonrep14");
+        var cpjeu14= document.getElementById("cpjeu14");
+       
+        //Contuire le message selon la reponce
+        if(rad314==true){
+            bonrec14.innerHTML="Bonne réponse";
+            suive14.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec14.innerHTML="Mauvaise réponse <br> la bonne réponse est 14 ";
+            rater14.style.display="block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+        if (bonne==10){
+             cpjeu14.style.display= "none";
+        }
+       
+        //Affiche les styles
+        bonrec14.style.display="block";
+        bonrep14.style.display="none";
+   } 
+
+   function suive14(){
+        //Cherche les données
+        var cpjeu14= document.getElementById("cpjeu14");
+        var cpjeu15= document.getElementById("cpjeu15");
+       
+        //Affiche les style 
+        cpjeu14.style.display= "none"; 
+        cpjeu15.style.display= "block";
+   }     
+     
+   function reco14(){
+        //Cherche les données
+        var cpjeu14= document.getElementById("cpjeu14");
+        var cpjeu15= document.getElementById("cpjeu15");
+
+        //Affiche les style 
+        cpjeu14.style.display= "none";
+        cpjeu15.style.display= "block";  
+   }
+     
+//Question 15---------------------------------------------------------------->
+   function bonrep15(){
+        //Cherche les données
+        var rad115= document.getElementById("rad115").checked;
+        var suive15= document.getElementById("suive15");
+        var bonrec15= document.getElementById("bonrec15");
+        var rater15= document.getElementById("reco15");
+        var bonrep15= document.getElementById("bonrep15");
+        var cpjeu15= document.getElementById("cpjeu15");
+       
+        //Contuire le message selon la reponce
+        if(rad115==true){
+            bonrec15.innerHTML="Bonne réponse";
+            suive15.style.display= "block";
+            bonne = bonne +1;
+            affichep();
+        }
+        else{
+            bonrec15.innerHTML="Mauvaise réponse <br> la bonne réponse est (-8)x(-12) <br> (-8)x(-12)=8x12 ";
+            rater15.style.display= "block";
+            bonne = bonne -1;
+            if(bonne<0){
+             bonne = 0;
+            }
+            affichep();
+        };
+        if (bonne==10){
+             cpjeu15.style.display= "none";
+        }
+       
+        //Affiche les styles
+        bonrec15.style.display="block";
+        bonrep15.style.display="none";
+   } 
+     
+   function suive15(){
+        //Cherche les données
+        var cpjeu15= document.getElementById("cpjeu15");
+        var fin= document.getElementById("fin");
+        var finimg= document.getElementById("finimg");
+        var poursen= document.getElementById("poursen");
+       
+        //Affiche les style 
+        cpjeu15.style.display= "none"; 
+        fin.style.display= "block";
+        finimg.style.display= "block";
+        poursen.style.display= "block";
+        
+   }
+     
+   function reco15(){
+        //Cherche les données
+        var cpjeu15= document.getElementById("cpjeu15");
+        var fin= document.getElementById("fin");
+        var finimg= document.getElementById("finimg");
+        var poursen= document.getElementById("poursen");
+       
+        //Affiche les style 
+        cpjeu15.style.display= "none"; 
+        fin.style.display= "block";
+        finimg.style.display= "block";
+        poursen.style.display= "block";
+        finchro = finchro +1;
+   } 
+  
+ </script>
+
+</body>
+    
+</html>
